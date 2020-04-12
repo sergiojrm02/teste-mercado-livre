@@ -1,0 +1,27 @@
+{
+  "name": "node-test-ml",
+  "version": "1.0.0",
+  "description": "Node.js - Test Mercado Livre Simio",
+  "author": "Sergio <sergiojrm02@gmail.com>",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "mocha --timeout 2000"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5",
+    "request": "^2.88.2",
+    "should": "^13.2.3"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "body-parser": "^1.19.0",
+    "crypto": "^1.0.1",
+    "express": "^4.16.1",
+    "mysql": "^2.18.1"
+  }
+}
