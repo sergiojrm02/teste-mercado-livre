@@ -5,7 +5,7 @@ Api Teste Símios - Mercado Livre - By Sergio Mufalo Jr
 ---
 ## Requirements
 
-For development, you will only need Node.js and a node global package, Yarn, installed in your environement.
+For development, you will only need Node.js a node global package (NPM) and database MySQL
 
 ### Node
 - #### Node installation on Windows
@@ -17,6 +17,7 @@ Also, be sure to have `git` available in your PATH, `npm` might need it (You can
 
   You can install nodejs and npm easily with apt install, just run the following commands.
 
+      $ sudo apt update
       $ sudo apt install nodejs
       $ sudo apt install npm
 
@@ -33,9 +34,22 @@ If the installation was successful, you should be able to run the following comm
 
 ---
 
-## Install
+### MySQL
 
-    $ git clone https://sergiojrm02@bitbucket.org/sergiojrm02/teste-mercardo-livre.git
+- #### MySQL installation on Windows
+    Just go on [official MySQL website](https://dev.mysql.com/downloads/installer/) and download the installer.
+
+- #### Node installation on Ubuntu
+
+  Install the MySQL server by using the Ubuntu operating system package manager, just run the following commands.
+
+      $ sudo apt update
+      $ sudo apt-get install mysql-server
+---
+
+## Install Project
+
+    $ git clone   https://github.com/sergiojrm02/teste-mercado-livre.git PROJECT_TITLE
     $ cd PROJECT_TITLE
     $ npm install
 
@@ -43,7 +57,7 @@ If the installation was successful, you should be able to run the following comm
 
 Open `PROJECT_TITLE/index.js` then edit it with your settings. You will need:
 
-Variable DB:
+Config variable DB:
 
 - HOST_DB
 - USER_DB
@@ -51,7 +65,7 @@ Variable DB:
 - NAME_DB
 - PORT_DB
 
-Variable Server:
+Config variable Server:
 
 - PORT
 - HOST
@@ -60,6 +74,108 @@ Variable Server:
 
     $ npm start
 
-## Test the project
+## Unit testing the project
 
     $ npm test
+    
+## SQL - Script MySQL
+
+```sql
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`node_db` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `node_db`;
+
+/*Table structure for table `simio` */
+
+DROP TABLE IF EXISTS `simio`;
+
+CREATE TABLE `simio` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `simio` text CHARACTER SET latin1,
+  `issimio` tinyint(1) unsigned DEFAULT '0',
+  `post` text,
+  `hash` varchar(255) CHARACTER SET latin1 DEFAULT '',
+  `created_dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_dt` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+```
+
+## Route Test POSTMAN
+
+```json
+{
+	"info": {
+		"_postman_id": "7014582c-f948-4046-acc2-283931d0d68f",
+		"name": "Projetos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Teste ML Simios",
+			"item": [
+				{
+					"name": "localhost:8080/stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/stats",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"stats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/simian",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dna\": [\n        \"ATGAAT\",\n        \"CAGTGT\",\n        \"TTATGT\",\n        \"AGCCGT\",\n        \"AGACGT\",\n        \"AGATTT\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/simian",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"simian"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+} 
+   ``` 
