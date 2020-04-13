@@ -1,6 +1,6 @@
 # Project Title
 
-Api Teste Símios - Mercado Livre - By Sergio Mufalo Jr
+Api Teste Símios - Mercado Livre - Sergio Mufalo Jr <sergiojrm02@gmail.com>
 
 ---
 ## Requirements
@@ -74,7 +74,7 @@ Config variable Server:
 
     $ npm start
 
-## Unit testing the project
+## Running tests
 
     $ npm test
     
@@ -114,7 +114,13 @@ CREATE TABLE `simio` (
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 ```
 
-## Route Test POSTMAN
+## Test [Postman](https://www.postman.com/downloads/)
+   ###Routes
+
+    [GET]   localhost:8080/stats
+    [POST]  localhost:8080/simian
+    
+   ###Schema Postman
 
 ```json
 {
@@ -178,4 +184,4 @@ CREATE TABLE `simio` (
 	],
 	"protocolProfileBehavior": {}
 } 
-   ``` 
+``` 
