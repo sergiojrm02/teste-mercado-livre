@@ -114,11 +114,23 @@ CREATE TABLE `simio` (
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 ```
 
-## Test [Postman](https://www.postman.com/downloads/)   
+## Test Api Local [Postman](https://www.postman.com/downloads/)   
 ## - Routes
     [GET]   localhost:8080/stats
     [POST]  localhost:8080/simian
-  
+Body:
+```json
+{
+    "dna": [
+	"ATGAAT",
+	"CAGTGT",
+	"TTATGT",
+	"AGCCGT",
+	"AGACTT",
+	"AGATTT"
+	]
+}
+```  
 ## - Schema Postman
 ```json
 {
@@ -182,4 +194,22 @@ CREATE TABLE `simio` (
 	],
 	"protocolProfileBehavior": {}
 } 
+```
+
+## Test Api Cloud
+## - Routes
+	[GET]	https://juui4z3ew9.execute-api.us-east-1.amazonaws.com/teste-simios/stats
+	[POST]	https://juui4z3ew9.execute-api.us-east-1.amazonaws.com/teste-simios/simian
+Body:
+```json
+{
+    "dna": [
+	"ATGAAT",
+	"CAGTGT",
+	"TTATGT",
+	"AGCCGT",
+	"AGACTT",
+	"AGATTT"
+	]
+}
 ```
