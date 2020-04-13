@@ -49,7 +49,7 @@ If the installation was successful, you should be able to run the following comm
 
 ## Install Project
 
-    $ git clone   https://github.com/sergiojrm02/teste-mercado-livre.git PROJECT_TITLE
+    $ git clone https://github.com/sergiojrm02/teste-mercado-livre.git PROJECT_TITLE
     $ cd PROJECT_TITLE
     $ npm install
 
