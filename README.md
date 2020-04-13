@@ -114,14 +114,12 @@ CREATE TABLE `simio` (
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 ```
 
-## Test [Postman](https://www.postman.com/downloads/)
-   ###Routes
-
+## Test [Postman](https://www.postman.com/downloads/)   
+## - Routes
     [GET]   localhost:8080/stats
     [POST]  localhost:8080/simian
-    
-   ###Schema Postman
-
+  
+## - Schema Postman
 ```json
 {
 	"info": {
@@ -184,4 +182,4 @@ CREATE TABLE `simio` (
 	],
 	"protocolProfileBehavior": {}
 } 
-``` 
+```
